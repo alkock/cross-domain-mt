@@ -1,0 +1,17 @@
+{
+  "name": "mt-cross-domain",
+  "build": {
+    "dockerfile": "../Dockerfile",
+    "context": ".."
+  },
+    "runArgs": [
+      "--gpus=all",
+      "--shm-size=8g"
+    ],
+  "remoteUser": "root",
+  "workspaceFolder": "/workspace",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
+  "mounts": [
+    "source=/mnt/scratch/eu2384,target=/workspace/mnt-data,type=bind"
+  ]
+}
